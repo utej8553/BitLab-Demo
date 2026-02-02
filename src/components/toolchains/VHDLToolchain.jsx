@@ -155,8 +155,8 @@ export default function VHDLToolchain() {
     );
 
     return (
-        <div className="flex h-full p-2 gap-2">
-            <div className="w-1/3 flex flex-col gap-2">
+        <div className="flex flex-col lg:flex-row h-full p-2 gap-2 overflow-y-auto lg:overflow-hidden">
+            <div className="w-full lg:w-1/3 flex flex-col gap-2 min-h-[600px] lg:min-h-0">
                 <div className="flex-1 h-1/2">
                     <CodeEditor label="design.vhdl" code={designCode} onChange={setDesignCode} />
                 </div>
@@ -165,7 +165,7 @@ export default function VHDLToolchain() {
                 </div>
             </div>
 
-            <div className="w-1/5 flex flex-col gap-2">
+            <div className="w-full lg:w-1/5 flex flex-col gap-2 min-h-[400px] lg:min-h-0">
                 <div className="h-1/3">
                     <ControlPanel
                         onCompile={handleCompile}
@@ -180,7 +180,7 @@ export default function VHDLToolchain() {
                 </div>
             </div>
 
-            <div className="flex-1">
+            <div className="w-full lg:flex-1 min-h-[400px] lg:min-h-0">
                 <VisualizationPanel title="VHDL Waveform Dump">
                     {data.length > 0 ? (
                         <div className="h-full w-full flex flex-col gap-2 p-4 overflow-y-auto">

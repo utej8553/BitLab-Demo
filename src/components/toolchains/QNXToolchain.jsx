@@ -87,8 +87,8 @@ export default function QNXToolchain() {
     };
 
     return (
-        <div className="flex h-full p-2 gap-2">
-            <div className="w-1/3 flex flex-col gap-2">
+        <div className="flex flex-col lg:flex-row h-full p-2 gap-2 overflow-y-auto lg:overflow-hidden">
+            <div className="w-full lg:w-1/3 flex flex-col gap-2 min-h-[600px] lg:min-h-0">
                 <div className="flex-1">
                     <CodeEditor label="main.c" code={code} onChange={setCode} />
                 </div>
@@ -116,7 +116,7 @@ export default function QNXToolchain() {
                 </div>
             </div>
 
-            <div className="w-1/5 flex flex-col gap-2">
+            <div className="w-full lg:w-1/5 flex flex-col gap-2 min-h-[400px] lg:min-h-0">
                 <div className="h-1/3">
                     <ControlPanel
                         onCompile={handleCompile}
@@ -131,7 +131,7 @@ export default function QNXToolchain() {
                 </div>
             </div>
 
-            <div className="flex-1">
+            <div className="w-full lg:flex-1 min-h-[400px] lg:min-h-0">
                 <VisualizationPanel title="RTOS Execution Timeline">
                     {tasks.length > 0 ? (
                         <div className="flex flex-col gap-4 p-4 h-full overflow-y-auto">
